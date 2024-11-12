@@ -1,0 +1,40 @@
+{# templates/contact/editContact.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+{%include 'inc/_header.html.twig'%}
+<link href="/css/styles.css" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <div class="container mt-5">
+        <h1 class="mb-4">Éditer le contact</h1>
+
+        <form method="post" class="col-md-6">
+            {{ form_start(form) }}
+            
+            <div class="mb-3">
+                {{ form_label(form.nom) }}
+                {{ form_widget(form.nom, {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+            <div class="mb-3">
+                {{ form_label(form.prenom) }}
+                {{ form_widget(form.prenom, {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+            <div class="mb-3">
+                {{ form_label(form.email) }}
+                {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+            <div class="mb-3">
+                {{ form_label(form.telephone) }}
+                {{ form_widget(form.telephone, {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+            <button type="submit" class="btn btn-primary">Enregistrer les modifications</button>
+
+            {{ form_end(form) }}
+        </form>
+    </div>
+{% endblock %}

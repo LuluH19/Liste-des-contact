@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Shop Homepage - Start Bootstrap Template</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    {% block stylesheets %}
+    <link href="/css/styles.css" rel="stylesheet" />
+    {% endblock %}
+</head>
+<body>
+    {% include 'inc/_header.html.twig' %}
+    
+    <header class="bg-dark py-5">
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="text-center text-white">
+                <h1 class="display-4 fw-bolder">Contacts</h1>
+                <p class="lead fw-normal text-white-50 mb-0">Liste des contacts</p>
+            </div>
+        </div>
+    </header>
+    
+    <section class="py-5 bg-light">
+        <div class="container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Prénom</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Téléphone</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for contact in contacts %}
+                        <tr>
+                            <td>{{ contact.nom }}</td>
+                            <td>{{ contact.prenom }}</td>
+                            <td>{{ contact.email }}</td>
+                            <td>{{ contact.telephone }}</td>
+                            <td>
+                                <a class="btn btn-outline-dark" href="{{ path('contact', {'id': contact.id}) }}">Voir</a>
+                                <a class="btn btn-warning" href="{{ path('edit_contact', {'id': contact.id}) }}">Modifier</a>
+                                <a class="btn btn-danger" href="{{ path('delete_contact', {'id': contact.id}) }}">Supprimer</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+    
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p>
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    {% block javascripts %}
+    <script src="js/scripts.js"></script>
+    {% endblock %}
+</body>
+</html>
