@@ -3,17 +3,54 @@
 {% block title %}Register{% endblock %}
 
 {% block body %}
-    <h1>Register</h1>
+{% include 'inc/_header.html.twig' %}
+<link href="/css/styles.css" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
 
-    {{ form_errors(registrationForm) }}
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
+    .form-container {
+        background-color: #ffffff;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 500px;
+        margin: 2rem auto;
+    }
+</style>
 
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
+<div class="container">
+    <div class="form-container">
+        <h1 class="text-center mb-4">Register</h1>
 
-        <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
+        {{ form_errors(registrationForm) }}
+
+        {{ form_start(registrationForm) }}
+            <div class="mb-3">
+                {{ form_row(registrationForm.email, {
+                    'attr': {'class': 'form-control'}
+                }) }}
+            </div>
+
+            <div class="mb-3">
+                {{ form_row(registrationForm.plainPassword, {
+                    'label': 'Password',
+                    'attr': {'class': 'form-control'}
+                }) }}
+            </div>
+
+            <div class="mb-3">
+                {{ form_row(registrationForm.agreeTerms, {
+                    'attr': {'class': 'form-check-input'}
+                }) }}
+            </div>
+
+            <div class="d-grid">
+                <button type="submit" class="btn btn-primary btn-lg">Register</button>
+            </div>
+        {{ form_end(registrationForm) }}
+    </div>
+</div>
 {% endblock %}

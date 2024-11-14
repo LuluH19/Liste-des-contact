@@ -1,16 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Contact Details - Your Website</title>
+    <title>Détails du Contact - Votre Site Web</title>
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
     {% block stylesheets %}
     <link href="/css/styles.css" rel="stylesheet" />
     {% endblock %}
+    <style>
+        body {
+            background-color: #f8f9fa; /* Couleur de fond */
+        }
+        .card {
+            background-color: #ffffff; /* Couleur de la carte */
+            border-radius: 10px; /* Coins arrondis */
+        }
+    </style>
 </head>
 <body>
     {% include 'inc/_header.html.twig' %}
@@ -18,7 +27,7 @@
     <header class="bg-dark py-5">
         <div class="container px-4 px-lg-5 my-5">
             <div class="text-center text-white">
-                <h1 class="display-4 fw-bolder">Contact Details</h1>
+                <h1 class="display-4 fw-bolder">Détails du Contact</h1>
             </div>
         </div>
     </header>
@@ -27,11 +36,11 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-6">
-                    <div class="card">
-                        <div class="card-body">
+                    <div class="card shadow-lg">
+                        <div class="card-body text-center">
                             <h2 class="card-title display-4 fw-bolder">{{ contact.prenom }} {{ contact.nom }}</h2>
                             <p class="card-text">
-                                <strong>id:</strong> {{ contact.id }}<br>
+                                <strong>ID:</strong> {{ contact.id }}<br>
                                 <strong>Email:</strong> {{ contact.email }}<br>
                                 <strong>Téléphone:</strong> {{ contact.telephone }}
                             </p>
@@ -44,7 +53,7 @@
     
     <footer class="py-5 bg-dark">
         <div class="container">
-            <p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p>
+            <p class="m-0 text-center text-white">Copyright &copy; Votre Site Web 2023</p>
         </div>
     </footer>
     
