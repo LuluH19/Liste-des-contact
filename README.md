@@ -32,6 +32,10 @@ Appliquez les migrations pour créer les tables nécessaires :
 
 php bin/console doctrine:migrations:migrate
 
+Pour commencer le serveur : 
+
+Symfony server
+
 Technologies
 Symfony 6 : Framework PHP pour le développement rapide d'applications web
 MySQL : Base de données relationnelle
